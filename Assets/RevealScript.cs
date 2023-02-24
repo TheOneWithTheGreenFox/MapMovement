@@ -5,24 +5,24 @@ using UnityEngine;
 public class RevealScript : MonoBehaviour
 {
     public bool transparent = false;
-    private SpriteRenderer sprite;
+    private MeshRenderer mesh;
 
     private void Start()
     {
         transparent = false;
-        sprite = GetComponent<SpriteRenderer>();
+        mesh = GetComponent<MeshRenderer>();
     }
 
     private void OnMouseDown()
     {
         if (transparent)
         {
-            sprite.color = new Color(0, 0, 0, 1);
+            mesh.enabled = true; //prite.color = new Color(0, 0, 0, 1);
             transparent = false;
         }
         else
         {
-            sprite.color = new Color(0, 0, 0, 0);
+            mesh.enabled = true; //sprite.color = new Color(0, 0, 0, 0);
             transparent = true;
         }
     }
