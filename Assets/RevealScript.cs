@@ -5,7 +5,10 @@ using UnityEngine;
 public class RevealScript : MonoBehaviour
 {
     public bool transparent = false;
-    private MeshRenderer mesh;
+    [SerializeField] private MeshRenderer mesh;
+    public Material solidMat;
+    public Material transMat;
+
 
     private void Start()
     {
@@ -17,12 +20,12 @@ public class RevealScript : MonoBehaviour
     {
         if (transparent)
         {
-            mesh.enabled = true; //prite.color = new Color(0, 0, 0, 1);
+            mesh.material = solidMat;
             transparent = false;
         }
         else
         {
-            mesh.enabled = true; //sprite.color = new Color(0, 0, 0, 0);
+            mesh.material = transMat;
             transparent = true;
         }
     }
